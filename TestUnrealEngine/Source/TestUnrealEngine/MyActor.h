@@ -25,9 +25,15 @@ public:
 
 private:
 
-	// 리플렉션 기능의 개념이다. 
-	// 런타임시 사용하는 컴파일 주석이라고 보면 된다. 
-	UPROPERTY();
-	// staticMesh 를 사용하는 기능이다.
+	// VisibleAnywhere 를 사용하면 액터의 시능을 어디서든 볼 수 있다.
+	UPROPERTY(VisibleAnywhere)
 	UStaticMeshComponent* Mesh;
+
+	// 인게임에서 사용할 정보 (액터의 특성!?) 등을 여기에 같이 선언 할 수 있다.
+	UPROPERTY(VisibleAnywhere, Category=BattleStat)
+	int32 HP;
+
+	UPROPERTY(VisibleAnywhere, Category = BattleStat)
+	int32 MP;
+	// 하지만 이렇게 넣고 빌드할 시, 어디에도 나타나지 않는다...
 };
