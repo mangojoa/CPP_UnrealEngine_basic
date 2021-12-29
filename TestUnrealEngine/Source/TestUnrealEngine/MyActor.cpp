@@ -35,7 +35,8 @@ void AMyActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
     
-    UE_LOG(LogTemp, Error, TEXT("Tick %f"), DeltaTime)
+//    UE_LOG(LogTemp, Error, TEXT("Tick %f"), DeltaTime)
+    AddActorLocalRotation(FRotator(0.f,RotateSpeed * DeltaTime, 0.f));
 
 }
 
