@@ -6,7 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "MyActor.generated.h"
 
-UCLASS() // 언리얼 클래스이다.
+UCLASS()
 class TESTUNREALENGINE_API AMyActor : public AActor
 {
 	GENERATED_BODY()
@@ -25,14 +25,12 @@ public:
 
 private:
 
-	// VisibleAnywhere 를 사용하면 액터를 어디서든 볼 수 있다.
 	UPROPERTY(VisibleAnywhere)
 	UStaticMeshComponent* Mesh;
 
-	// EditAnywhere 를 사용하면 액터의 기능을 수정할 수 있다. 
 	UPROPERTY(EditAnywhere, Category=BattleStat)
 	int32 HP;
 
-	UPROPERTY(EditAnywhere, Category = BattleStat)
+	UPROPERTY(EditAnywhere, Category=BattleStat)
 	int32 MP;
 };

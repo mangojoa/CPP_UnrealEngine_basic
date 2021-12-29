@@ -11,10 +11,8 @@ AMyActor::AMyActor()
 
 	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MESH"));
 
-	// Component를 추가할때는 RootComponent식으로 먼저 선언해줘야 한다.
 	RootComponent = Mesh;
 
-	// 매쉬를 받아서 사용하는 부분 // static 을 사용하는 방법도 종종 등장하곤 한다.
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> SM(TEXT("StaticMesh'/Game/StarterContent/Props/SM_Couch.SM_Couch'"));
 
 	if (SM.Succeeded()) {
@@ -26,6 +24,9 @@ AMyActor::AMyActor()
 void AMyActor::BeginPlay()
 {
 	Super::BeginPlay();
+    
+    // Loging (category, loging level, type, value)
+    UE_LOG(LogTemp, Warning, TEXT("BeginPlay %d"), 3);
 	
 }
 
@@ -33,6 +34,8 @@ void AMyActor::BeginPlay()
 void AMyActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+    
+    UE_LOG(LogTemp, Error, TEXT("Tick %f"), DeltaTime)
 
 }
 
