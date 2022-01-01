@@ -33,4 +33,8 @@ private:
 
     UPROPERTY(VisibleAnywhere)
     UStaticMeshComponent* Mesh;
+    
+    // This is component for control of Player that flexible
+    UPROPERTY(VisibleAnywhere)
+    class UFloatingPawnMovement* Movement;
 };

@@ -2,6 +2,7 @@
 
 
 #include "MyPawn.h"
+#include "GameFramework/FloatingPawnMovement.h"
 
 // Sets default values
 AMyPawn::AMyPawn()
@@ -10,6 +11,7 @@ AMyPawn::AMyPawn()
 	PrimaryActorTick.bCanEverTick = true;
     
     Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MESH"));
+    Movement = CreateDefaultSubobject<UFloatingPawnMovement>(TEXT("MOVEMENT"));
 
     RootComponent = Mesh;
 
@@ -47,10 +49,29 @@ void AMyPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 }
 
 void AMyPawn::UpDown(float Value) {
-    UE_LOG(LogTemp, Warning, TEXT("UpDown %f"), Value);
+    
+    if (Value == 0.f)
+        return;
+    // if value is 0.0, no print
+    
+    // [22.01.01] Let's move Pawn
+    AddMovementInput(GetActorForwardVector(), Value);
+    
+    // UE_LOG(LogTemp, Warning, TEXT("UpDown %f"), Value);
+    
 }
 
 void AMyPawn::LeftRight(float Value) {
-    UE_LOG(LogTemp, Warning, TEXT("LeftRight %f"), Value);
+    
+    if (Value == 0.f)
+        return;
+    // if value is 0.0, no print
+    
+    // [22.01.01] Let's move Pawn
+    AddMovementInput(GetActorRightVector(), Value);
+    
+    // UE_LOG(LogTemp, Warning, TEXT("LeftRight %f"), Value);
+    
+    
 }
 
