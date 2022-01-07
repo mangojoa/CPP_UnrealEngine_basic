@@ -57,6 +57,7 @@ void AMyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
     PlayerInputComponent->BindAxis(TEXT("LeftRight"), this, &AMyCharacter::LeftRight);
     PlayerInputComponent->BindAxis(TEXT("Yaw"), this, &AMyCharacter::Yaw);
     // joystict of control
+    // 한글 적용 테스트
 
 }
 
