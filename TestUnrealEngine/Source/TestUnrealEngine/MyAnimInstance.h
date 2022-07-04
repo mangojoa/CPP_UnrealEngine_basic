@@ -21,7 +21,5 @@ class TESTUNREALENGINE_API UMyAnimInstance : public UVehicleAnimInstance
 private:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Pawn, Meta=(AllowPrivateAccess=true))
-		float Speed;
+		float Speed; // 이는 캐릭터의 속도를 선언하는 부분
 };
-
-// 
