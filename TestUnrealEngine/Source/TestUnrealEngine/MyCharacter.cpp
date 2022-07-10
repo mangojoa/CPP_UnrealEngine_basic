@@ -61,6 +61,9 @@ void AMyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 
 }
 
+/* [22.07.10] 방향키 값을 불러와 해당 값을 이용한 컨트롤 조작 함수 구현
+
+*/
 void AMyCharacter::UpDown(float Value) {
     
     if (Value == 0.f)
